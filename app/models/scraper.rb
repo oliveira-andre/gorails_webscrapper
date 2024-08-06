@@ -4,6 +4,7 @@ require 'net/http'
 
 class Scraper
   attr_reader :document
+
   def initialize(url)
     response = Net::HTTP.get(URI(url))
     @document = Nokogiri::HTML(response)
